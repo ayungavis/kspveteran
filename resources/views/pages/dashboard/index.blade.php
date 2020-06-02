@@ -8,13 +8,12 @@ Selamat datang, {{ Auth::user()->name }}!
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti adipisci saepe.
 @endsection
 
-@section('breadcumb')
-<li class="breadcrumb-item active">
-  Beranda
-</li>
-@endsection
-
 @section('content')
-  @include('pages.dashboard.menu')
-  @include('pages.dashboard.customers')
+  @if (auth()->user()->role->level >= 10)
+    @include('pages.dashboard.menu')
+  @endif
+
+  @if (auth()->user()->role->level >= 2)
+    @include('pages.customer-list.table')
+  @endif
 @endsection

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="js">
+
 <head>
   <meta charset="utf-8" />
   <meta name="author" content="Wahyu Adi Kurniawan" />
@@ -15,54 +16,37 @@
   <link rel="stylesheet" href="{{ asset('css/dashlite.css?ver=1.4.0') }}" />
   <link id="skin-default" rel="stylesheet" href="{{ asset('css/theme.css?ver=1.4.0') }}" />
 </head>
-<body class="nk-body npc-subscription has-aside ui-clean">
+
+<body class="nk-body bg-white npc-general pg-error">
   <div class="nk-app-root">
     <!-- main @s -->
-    <div class="nk-main">
+    <div class="nk-main ">
       <!-- wrap @s -->
-      <div class="nk-wrap">
-
-        @include('layouts.includes.header')
-
+      <div class="nk-wrap justify-center">
         <!-- content @s -->
-        <div class="nk-content">
-          <div class="container wide-xl">
-            <div class="nk-content-inner">
-
-              @include('layouts.includes.sidebar')
-
-              <div class="nk-content-body">
-                <div class="nk-content-wrap">
-
-                  @include('layouts.includes.block')
-
-                  @yield('content')
-
-                </div>
-
-                @include('layouts.includes.footer')
-
+        <div class="nk-content ">
+          <div class="nk-block nk-block-middle wide-md mx-auto">
+            <div class="nk-block-content nk-error-ld text-center">
+              <img class="nk-error-gfx" src="{{ asset('images/gfx/error-504.svg') }}" alt="">
+              <div class="wide-xs mx-auto">
+                <h3 class="nk-error-title">Gateway Timeout Error</h3>
+                <p class="nk-error-text">Kami mohon maaf atas ketidaknyamanan ini. Sepertinya beberapa cara server kami
+                  tidak menerima respons tepat waktu.</p>
+                <a href="{{ url()->previous() }}" class="btn btn-lg btn-primary mt-2">Back</a>
               </div>
             </div>
-          </div>
+          </div><!-- .nk-block -->
         </div>
-        <!-- content @e -->
-
+        <!-- wrap @e -->
       </div>
-      <!-- wrap @e -->
+      <!-- content @e -->
     </div>
     <!-- main @e -->
   </div>
   <!-- app-root @e -->
 
-  @yield('before-script')
-
   <!-- JavaScript -->
   <script src="{{ asset('js/bundle.js?ver=1.4.0') }}"></script>
   <script src="{{ asset('js/scripts.js?ver=1.4.0') }}"></script>
-  <script src="{{ asset('js/libs/cleave.js') }}"></script>
 
-  @yield('extra-script')
-  
-</body>
 </html>

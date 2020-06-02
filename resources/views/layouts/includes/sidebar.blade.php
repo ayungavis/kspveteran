@@ -22,9 +22,10 @@
           <span class="nk-menu-text">Beranda</span>
         </a>
       </li>
+      @if (auth()->user()->role->level >= 10)
       <li class="nk-menu-item">
         <a
-          href="{{ url('/') }}"
+          href="{{ url('/customers/create') }}"
           class="nk-menu-link"
         >
           <span class="nk-menu-icon"
@@ -33,9 +34,11 @@
           <span class="nk-menu-text">Registrasi Nasabah</span>
         </a>
       </li>
+      @endif
+      @if (auth()->user()->role->level >= 2)
       <li class="nk-menu-item">
         <a
-          href="{{ url('/') }}"
+          href="{{ url('/customers') }}"
           class="nk-menu-link"
         >
           <span class="nk-menu-icon"
@@ -44,9 +47,11 @@
           <span class="nk-menu-text">Lihat Nasabah</span>
         </a>
       </li>
+      @endif
+      @if (auth()->user()->role->level >= 10)
       <li class="nk-menu-item">
         <a
-          href="{{ url('/') }}"
+          href="{{ url('savings/create') }}"
           class="nk-menu-link"
         >
           <span class="nk-menu-icon"
@@ -57,7 +62,7 @@
       </li>
       <li class="nk-menu-item">
         <a
-          href="{{ url('/') }}"
+          href="{{ url('installments/create') }}"
           class="nk-menu-link"
         >
           <span class="nk-menu-icon"
@@ -66,6 +71,7 @@
           <span class="nk-menu-text">Angsuran Pinjaman</span>
         </a>
       </li>
+      @endif
     </ul>
     <!-- Menu -->
     <ul class="nk-menu nk-menu-sm">

@@ -25,7 +25,7 @@
                 <div
                   class="user-name dropdown-indicator d-none d-sm-block"
                 >
-                  John Doe
+                  {{ auth()->user()->name }}
                 </div>
               </div>
             </a>
@@ -36,23 +36,23 @@
                 class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block"
               >
                 <div class="user-card">
-                  <div class="user-avatar">
-                    <span>JD</span>
-                  </div>
+                  <div class="user-avatar sm">
+                  <em class="icon ni ni-user-alt"></em>
+                </div>
                   <div class="user-info">
-                    <span class="lead-text">John Doe</span>
-                    <span class="sub-text">johndoe@domain.com</span>
+                    <span class="lead-text">{{ auth()->user()->name }}</span>
+                    <span class="sub-text">{{ auth()->user()->email }}</span>
                   </div>
                   <div class="user-action">
-                    <a
+                    <!-- <a
                       class="btn btn-icon mr-n2"
                       href="html/subscription/profile-setting.html"
                       ><em class="icon ni ni-setting"></em
-                    ></a>
+                    ></a> -->
                   </div>
                 </div>
               </div>
-              <div class="dropdown-inner">
+              <!-- <div class="dropdown-inner">
                 <ul class="link-list">
                   <li>
                     <a href="html/subscription/profile.html"
@@ -73,137 +73,19 @@
                     >
                   </li>
                 </ul>
-              </div>
+              </div> -->
               <div class="dropdown-inner">
                 <ul class="link-list">
                   <li>
-                    <a href="#"
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                       ><em class="icon ni ni-signout"></em
                       ><span>Keluar</span></a
                     >
                   </li>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                  </form>
                 </ul>
-              </div>
-            </div>
-          </li>
-          <!-- .dropdown -->
-          <li class="dropdown notification-dropdown">
-            <a
-              href="#"
-              class="dropdown-toggle nk-quick-nav-icon mr-lg-n1"
-              data-toggle="dropdown"
-            >
-              <div class="icon-status icon-status-info">
-                <em class="icon ni ni-bell"></em>
-              </div>
-            </a>
-            <div
-              class="dropdown-menu dropdown-menu-xl dropdown-menu-right dropdown-menu-s1"
-            >
-              <div class="dropdown-head">
-                <span class="sub-title nk-dropdown-title"
-                  >Pemberitahuan</span
-                >
-                <a href="#">Tandai Semua Dibaca</a>
-              </div>
-              <div class="dropdown-body">
-                <div class="nk-notification">
-                  <div class="nk-notification-item dropdown-inner">
-                    <div class="nk-notification-icon">
-                      <em
-                        class="icon icon-circle bg-warning-dim ni ni-curve-down-right"
-                      ></em>
-                    </div>
-                    <div class="nk-notification-content">
-                      <div class="nk-notification-text">
-                        You have requested to <span>Widthdrawl</span>
-                      </div>
-                      <div class="nk-notification-time">
-                        2 hrs ago
-                      </div>
-                    </div>
-                  </div>
-                  <div class="nk-notification-item dropdown-inner">
-                    <div class="nk-notification-icon">
-                      <em
-                        class="icon icon-circle bg-success-dim ni ni-curve-down-left"
-                      ></em>
-                    </div>
-                    <div class="nk-notification-content">
-                      <div class="nk-notification-text">
-                        Your <span>Deposit Order</span> is placed
-                      </div>
-                      <div class="nk-notification-time">
-                        2 hrs ago
-                      </div>
-                    </div>
-                  </div>
-                  <div class="nk-notification-item dropdown-inner">
-                    <div class="nk-notification-icon">
-                      <em
-                        class="icon icon-circle bg-warning-dim ni ni-curve-down-right"
-                      ></em>
-                    </div>
-                    <div class="nk-notification-content">
-                      <div class="nk-notification-text">
-                        You have requested to <span>Widthdrawl</span>
-                      </div>
-                      <div class="nk-notification-time">
-                        2 hrs ago
-                      </div>
-                    </div>
-                  </div>
-                  <div class="nk-notification-item dropdown-inner">
-                    <div class="nk-notification-icon">
-                      <em
-                        class="icon icon-circle bg-success-dim ni ni-curve-down-left"
-                      ></em>
-                    </div>
-                    <div class="nk-notification-content">
-                      <div class="nk-notification-text">
-                        Your <span>Deposit Order</span> is placed
-                      </div>
-                      <div class="nk-notification-time">
-                        2 hrs ago
-                      </div>
-                    </div>
-                  </div>
-                  <div class="nk-notification-item dropdown-inner">
-                    <div class="nk-notification-icon">
-                      <em
-                        class="icon icon-circle bg-warning-dim ni ni-curve-down-right"
-                      ></em>
-                    </div>
-                    <div class="nk-notification-content">
-                      <div class="nk-notification-text">
-                        You have requested to <span>Widthdrawl</span>
-                      </div>
-                      <div class="nk-notification-time">
-                        2 hrs ago
-                      </div>
-                    </div>
-                  </div>
-                  <div class="nk-notification-item dropdown-inner">
-                    <div class="nk-notification-icon">
-                      <em
-                        class="icon icon-circle bg-success-dim ni ni-curve-down-left"
-                      ></em>
-                    </div>
-                    <div class="nk-notification-content">
-                      <div class="nk-notification-text">
-                        Your <span>Deposit Order</span> is placed
-                      </div>
-                      <div class="nk-notification-time">
-                        2 hrs ago
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- .nk-notification -->
-              </div>
-              <!-- .nk-dropdown-body -->
-              <div class="dropdown-foot center">
-                <a href="#">View All</a>
               </div>
             </div>
           </li>
