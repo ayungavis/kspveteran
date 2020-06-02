@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f0dcbdc80776ca79d6311b8f92c5a4b5",
+    "content-hash": "371149e51f6d628b130a8c379a71a174",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3725,6 +3725,56 @@
             "time": "2019-10-24T08:53:34+00:00"
         },
         {
+            "name": "twilio/sdk",
+            "version": "6.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twilio/twilio-php.git",
+                "reference": "eba44af458c63227acc9a2449f21733a6f72ce86"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twilio/twilio-php/zipball/eba44af458c63227acc9a2449f21733a6f72ce86",
+                "reference": "eba44af458c63227acc9a2449f21733a6f72ce86",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "require-dev": {
+                "guzzlehttp/guzzle": "^6.3",
+                "phpunit/phpunit": ">=4.5",
+                "theseer/phpdox": "^0.12.0"
+            },
+            "suggest": {
+                "guzzlehttp/guzzle": "An HTTP client to execute the API requests"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Twilio\\": "src/Twilio/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Twilio API Team",
+                    "email": "api@twilio.com"
+                }
+            ],
+            "description": "A PHP wrapper for Twilio's API",
+            "homepage": "http://github.com/twilio/twilio-php",
+            "keywords": [
+                "api",
+                "sms",
+                "twilio"
+            ],
+            "time": "2020-05-27T19:28:33+00:00"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v4.1.6",
             "source": {
@@ -3863,6 +3913,57 @@
                 }
             ],
             "time": "2020-05-23T23:15:19+00:00"
+        },
+        {
+            "name": "wildside/userstamps",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WildsideUK/Laravel-Userstamps.git",
+                "reference": "4176b799bc31ca961a85a485cbd922163dcc4a7f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WildsideUK/Laravel-Userstamps/zipball/4176b799bc31ca961a85a485cbd922163dcc4a7f",
+                "reference": "4176b799bc31ca961a85a485cbd922163dcc4a7f",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.2|^6.0|^7.0",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "illuminate/database": "^5.2|^6.0|^7.0",
+                "orchestra/testbench": "^3.1|^4.0|^5.0",
+                "phpunit/phpunit": "^5.0|^6.0|^7.0|^8.4|^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Wildside\\Userstamps\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "WILDSIDE",
+                    "email": "hello@wildside.uk",
+                    "homepage": "https://wildside.uk"
+                }
+            ],
+            "description": "Laravel Userstamps provides an Eloquent trait which automatically maintains `created_by` and `updated_by` columns on your model, populated by the currently authenticated user in your application.",
+            "keywords": [
+                "created_by",
+                "deleted_by",
+                "eloquent",
+                "laravel",
+                "updated_by",
+                "userstamps"
+            ],
+            "time": "2020-03-09T16:54:22+00:00"
         }
     ],
     "packages-dev": [
